@@ -1,17 +1,16 @@
-<div>
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-     <h1>HOME PAGE</h1>
-    {{ URL::current() }}
-    <!-- or -->
-    {{url()->current()}}
-<!-- current url -->
+<h1>My First Home Laravel File</h1>
 
-<h4>
-    {{URL::full()}}
-     <!-- or-->
-      {{url()->full()}}
-</h4>
-  <!-- current url with name -->
-</div>
-<a href="/about">about</a>
-<a href="{{Route('hm')}}">OUR NAMED ROUTESS</a>
+<!-- use a tag to open web pages  -->
+<a href="/">welcome</a>
+<a href="/about/mawra">About</a>
+
+<!-- subview example -->
+ <!-- this is main view  -->
+  @include('subview.header')
+
+  <!-- components example -->
+   <x-Mycomponent msg = "user login succesfully"/>
+      <x-Mycomponent msg = "user signup succesfully"/>
+
+  
+    

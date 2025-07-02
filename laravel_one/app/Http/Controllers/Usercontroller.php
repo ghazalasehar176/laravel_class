@@ -3,34 +3,54 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\view; //check admin panel exist or not 
 
 class Usercontroller extends Controller
 {
-    function addUser(Request $request){
-       echo "user name is: $request->username";
-       echo "<br>";
-       echo "user email is: $request->email";
-        echo "<br>";
-       echo "user city is: $request->city";
-        echo "<br>";
-    
 
-        $request->validate([
-           'username'=>'required | min:3 | max:10',
-           'email'=>'required | email',
-           //| email phir corrected email value b mang gy ga 
-           'city'=>'required | max:20',
-           'city'=>'uppercase'
-        ] 
-        // make custom message 
-        , 
-        [
-            'username.required'=>'username field can not be empty',
-            'username.min'=>'username have to be atleast 3 character',
-            'username.max'=>'max character limit is 15 for username',
-            'email.email'=>'not a valid email',
-            'city.uppercase'=>'city should be uppercase'
-        ]);
+    function myFunc(){
+        return "first controller function";
     }
 
+    function hello(){
+        return "second controller function";
+    }
+
+    function new($name){
+        return  "Hello , this is " .$name;
+    }
+
+    function my(){
+        return view('home');
+    }
+    // function getr($name){
+    //     return view('getuser' , ['name'=>$name]);
+    // }
+
+     function mine($name){
+        return view('getuser');
+    }
+
+    
+  function myuser($namme){
+  echo "hello , this is user ".$namme;//passing name function
+  }
+
+  function view(){
+    return view('home');
+  }
+
+  function getuser($name) {
+  return view('getuser' , ['name' => $name]); //passing the name
+  }
+
+  function adminLogin(){
+    if(view::exists('admin.login')){    //check admin panel exist or not 
+         return view('admin.login');
+    }
+   else{
+    echo "no view found ";
+   }
+  }
 }
+

@@ -18,8 +18,7 @@ class AgeCheck
         //   echo "<pre>";
         //   print_r($request->age);
 
-
-
+        
           if($request->age < 18){
             die(" you can't visit this website") ;
           } 

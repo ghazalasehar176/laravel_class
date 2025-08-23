@@ -40,8 +40,12 @@
                 <h5>Age</h5>
                 <input type="range" name="age" min="18" max ="100">
             </div>
+
+            
             <button class = "btn btn-warning form-control mb-3" type = "submit">Add new user</button>
-</form>
+
+        </form>
+
         </div>
      </div>
 </div>

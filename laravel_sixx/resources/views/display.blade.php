@@ -1,3 +1,3 @@
 <div>
-    <img style = "width:400px" src="{{asset('storage/'.$data) }}" alt="">
+    <img style = "width:400px" src="{{url('storage/'.$path) }}" alt="">
 </div>

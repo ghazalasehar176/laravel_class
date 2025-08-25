@@ -26,5 +26,5 @@ Route::post('add' , [FlashSessionController::class, 'addUser']);
 Route::view('flash' , 'Flashsession');
 
 //file upload
-Route::view('up' , 'Fileupload');
-Route::post('upload' , [Uploadcontroller::class, 'upFun']);
+Route::view('upload' , 'Fileupload');
+Route::post('upload' , [Uploadcontroller::class, 'upload']);
